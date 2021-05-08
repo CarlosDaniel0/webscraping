@@ -11,8 +11,8 @@ def genTable(head, body):
 
     resH = '|  #  | '
     resB = ''
-    divisor = '+' + '-' * 5 + '+' + '-'*34 + '+' + '-'*9 + \
-        '+' + '-'*9 + '+' + '-'*9 + '+' + '-'*9 + '+' + '\n'
+    divisor = '+' + '-' * 5 + '+' + '-'*34 + '+' + '-'*11 + \
+        '+' + '-'*11 + '+' + '-'*11 + '+' + '-'*11 + '+' + '\n'
     res = divisor
     for i in range(len(head)):
         if i == 0:
@@ -20,7 +20,7 @@ def genTable(head, body):
         elif i == 1:
             resH += head[i].ljust(32, ' ') + ' | '
         else:
-            resH += head[i].ljust(7, ' ') + ' | '
+            resH += head[i].ljust(9, ' ') + ' | '
     resH += '\n' + divisor
     for data in body:
         for items in range(len(data) - 1):
@@ -34,7 +34,7 @@ def genTable(head, body):
             elif items == 1:
                 resB += data[items].ljust(25, ' ') + '\t | '
             else:
-                resB += data[items].ljust(7, ' ') + ' | '
+                resB += data[items].ljust(9, ' ') + ' | '
 
         resB += '\n'
     res += resH + resB
